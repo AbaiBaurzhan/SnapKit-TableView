@@ -55,6 +55,13 @@ class TableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = arrayPerson[indexPath.row]
+        let detailVC = ViewController()
+        detailVC.person = person
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
     
